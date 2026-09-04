@@ -19,3 +19,4 @@ base estrutural?
 O HTML5 seria a base estrutural obrigatória para criar a página principal de uma loja virtual.
 Ele é utilizado para estruturar páginas Web por meio de elementos como header,
 section, article, nav e footer.
+
