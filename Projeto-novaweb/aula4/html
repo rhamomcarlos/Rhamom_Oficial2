@@ -1,0 +1,44 @@
+<!--
+Descricao: Aula 04: Introdução ao CSS e Seletores
+nome_arquivo: index.html
+nome_exercicio: Aula 04: Introdução ao CSS e Seletores
+nome_aluno: Rhamom Izzaque Rocha Carlos
+email_aluno: rhamom.rocha@portalsesisp.org.br
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao CSS</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <h1 class="titulo">Introdução ao CSS e Seletores</h1>
+    <p id="descricao">
+        CSS é uma linguagem utilizada para estilizar e organizar páginas HTML.
+    </p>
+
+    <p class="paragrafo-simples">
+        O CSS permite alterar cores, tamanhos, fontes e espaçamentos.
+    </p>
+
+    <p class="paragrafo-simples">
+        Também podemos criar layouts mais bonitos e organizados.
+    </p>
+
+    <p class="paragrafo-simples">
+        Nesta atividade vamos praticar diferentes tipos de seletores CSS.
+    </p>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+</body>
+</html>
