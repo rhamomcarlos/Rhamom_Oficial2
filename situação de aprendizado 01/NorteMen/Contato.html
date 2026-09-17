@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda Masculina - Contato e Avaliações</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #0b0f19; /* FUNDO DARK */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #151c2c;
+            border-bottom: 2px solid #00d2ff;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #00d2ff;
+            background-color: rgba(0, 210, 255, 0.1);
+            border: 1px solid #00d2ff;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .subtitulo-secao {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .subtitulo-secao h2 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo-secao p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* CAIXA DO FORMULÁRIO COM DESTAQUE NEON */
+        .form-contato {
+            background-color: #151c2c;
+            border: 2px solid #00d2ff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+            margin-bottom: 4rem;
+        }
+
+        .campo {
+            margin-bottom: 1.5rem;
+        }
+
+        .campo label {
+            color: #00d2ff;
+            font-size: 1rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .campo input, .campo select, .campo textarea {
+            background-color: #0b0f19;
+            border: 1px solid #243048;
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .campo input:focus, .campo select:focus, .campo textarea:focus {
+            border-color: #00d2ff;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #00d2ff;
+            color: #0b0f19;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 1rem 0;
+            border-radius: 8px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #009dff;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        }
+
+        /* CARTOES DE AVALIAÇÃO DOS CLIENTES */
+        .secao-comentarios {
+            margin-top: 3rem;
+        }
+
+        .grid-comentarios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cartao-comentario {
+            background-color: #151c2c;
+            border: 1px solid #243048;
+            border-left: 4px solid #00d2ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .autor-comentario {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .autor-comentario h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .estrelas {
+            color: #ffc107;
+            font-size: 1.1rem;
+        }
+
+        .texto-comentario {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: #151c2c;
+            border-top: 1px solid #243048;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Moda Masculina</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="colecao.html">Coleção</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="subtitulo-secao">
+            <h2>Deixe seu Comentário</h2>
+            <p>Escreva sua opinião ou faça uma avaliação sobre nossos produtos.</p>
+        </div>
+
+        <!-- FORMULÁRIO DE AVALIAÇÃO -->
+        <section class="form-contato">
+            <form action="#" method="post">
+                <div class="campo">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Seu E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="avaliacao">Sua Nota</label>
+                    <select id="avaliacao" name="avaliacao">
+                        <option value="5">⭐⭐⭐⭐⭐ (5/5 - Excelente)</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5 - Muito Bom)</option>
+                        <option value="3">⭐⭐⭐ (3/5 - Bom)</option>
+                        <option value="2">⭐⭐ (2/5 - Regular)</option>
+                        <option value="1">⭐ (1/5 - Ruim)</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Seu Comentário / Avaliação</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva aqui seu comentário sobre os produtos da loja..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Publicar Comentário</button>
+            </form>
+        </section>
+
+        <!-- ÁREA ONDE FICAM AS AVALIAÇÕES PUBLICADAS -->
+        <section class="secao-comentarios">
+            <div class="subtitulo-secao">
+                <h2>Avaliações Recentes</h2>
+            </div>
+
+            <div class="grid-comentarios">
+                <div class="cartao-comentario">
+                    <div class="autor-comentario">
+                        <h4>Carlos Eduardo</h4>
+                        <span class="estrelas">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="texto-comentario">"O tênis casual chegou super rápido e a qualidade é top demais. Com certeza comprarei mais vezes!"</p>
+                </div>
+
+                <div class="cartao-comentario">
+                    <div class="autor-comentario">
+                        <h4>Lucas Mendes</h4>
+                        <span class="estrelas">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="texto-comentario">"Comprei a camisa social e a calça jeans. O tecido é muito bom e serviu certinho."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Moda Masculina. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

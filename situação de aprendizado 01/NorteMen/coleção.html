@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda Masculina - Coleção</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #0b0f19; /* FUNDO DARK */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #151c2c;
+            border-bottom: 2px solid #00d2ff;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #00d2ff;
+            background-color: rgba(0, 210, 255, 0.1);
+            border: 1px solid #00d2ff;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .subtitulo-secao {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .subtitulo-secao h2 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo-secao p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* CARD DE PRODUTO */
+        .card-produto {
+            background-color: #151c2c;
+            border: 1px solid #243048;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card-produto:hover {
+            border-color: #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card-produto h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card-produto img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .preco {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d2ff;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #00d2ff;
+            color: #0b0f19;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.9rem 0;
+            border-radius: 6px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #009dff;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        }
+
+        /* TABELA DE MEDIDAS */
+        .tabela-container {
+            margin-top: 5rem;
+            background-color: #151c2c;
+            border: 1px solid #243048;
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+
+        .tabela-container h3 {
+            font-size: 1.8rem;
+            color: #00d2ff;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .tabela-container p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #243048;
+            font-size: 1.1rem;
+        }
+
+        th {
+            background-color: #0b0f19;
+            color: #00d2ff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:hover td {
+            background-color: #1e293b;
+        }
+
+        footer {
+            background-color: #151c2c;
+            border-top: 1px solid #243048;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Moda Masculina</h1>
+        <nav>
+            <ul>
+                <!-- COMANDOS/LINKS CORRIGIDOS PARA TROCAR DE TELA -->
+                <li><a href="index.html">Início</a></li>
+                <li><a href="colecao.html" class="active">Coleção</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="subtitulo-secao">
+            <h2>Nossa Coleção</h2>
+            <p>Escolha seus produtos com os melhores preços e estilo.</p>
+        </div>
+
+        <div class="grid-produtos">
+            <article class="card-produto">
+                <h3>Tênis Casual</h3>
+                <img src="https://i.pinimg.com/1200x/02/63/4b/02634bdaf88f6fbaf5f3d4c0a0c9fe47.jpg" alt="Tênis Casual">
+                <p class="preco">R$ 299,90</p>
+                <button class="btn" onclick="alert('Produto adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card-produto">
+                <h3>Calça Jeans Wide Leg</h3>
+                <img src="https://i.pinimg.com/1200x/57/01/3f/57013f5d088bd8e8bbfa799701497a9d.jpg" alt="Calça Jeans Wide Leg Masculina">
+                <p class="preco">R$ 189,90</p>
+                <button class="btn" onclick="alert('Produto adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card-produto">
+                <h3>Camisa Social</h3>
+                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=800&auto=format&fit=crop" alt="Camisa Social">
+                <p class="preco">R$ 149,90</p>
+                <button class="btn" onclick="alert('Produto adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card-produto">
+                <h3>Relógio Rolex</h3>
+                <img src="https://i.pinimg.com/736x/97/ca/fe/97cafe793181df23bc758fbfe4b2e1b0.jpg" alt="Relógio Analógico">
+                <p class="preco">R$ 399,90</p>
+                <button class="btn" onclick="alert('Produto adicionado ao carrinho!')">Adicionar ao Carrinho</button>
+            </article>
+        </div>
+
+        <section class="tabela-container">
+            <h3>Guia de Medidas (cm)</h3>
+            <p>Compare suas medidas abaixo antes de comprar:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tamanho</th>
+                        <th>Calça (Cintura)</th>
+                        <th>Camisa (Tórax)</th>
+                        <th>Calçado (BR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>P</td>
+                        <td>78 - 82 cm</td>
+                        <td>92 - 96 cm</td>
+                        <td>38 - 39</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>86 - 90 cm</td>
+                        <td>100 - 104 cm</td>
+                        <td>40 - 41</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>94 - 98 cm</td>
+                        <td>108 - 112 cm</td>
+                        <td>42 - 43</td>
+                    </tr>
+                    <tr>
+                        <td>GG</td>
+                        <td>102 - 106 cm</td>
+                        <td>116 - 120 cm</td>
+                        <td>44 - 45</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Moda Masculina. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+

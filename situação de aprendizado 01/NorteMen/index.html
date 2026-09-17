@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda Masculina - Coleção</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #151c2c;
+            border-bottom: 2px solid #00d2ff;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #00d2ff;
+            background-color: rgba(0, 210, 255, 0.1);
+            border: 1px solid #00d2ff;
+        }
+
+        /* BOTÃO DO CARRINHO NO MENU */
+        .btn-carrinho-header {
+            background-color: #00d2ff;
+            color: #0b0f19;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-carrinho-header:hover {
+            background-color: #009dff;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+        }
+
+        .contador-carrinho {
+            background-color: #0b0f19;
+            color: #00d2ff;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.9rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .subtitulo-secao {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .subtitulo-secao h2 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo-secao p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* CARD DO PRODUTO */
+        .card-produto {
+            background-color: #151c2c;
+            border: 1px solid #243048;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card-produto:hover {
+            border-color: #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card-produto h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card-produto img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .preco {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d2ff;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #00d2ff;
+            color: #0b0f19;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.9rem 0;
+            border-radius: 6px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #009dff;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+        }
+
+        /* TABELA DE MEDIDAS */
+        .tabela-container {
+            margin-top: 5rem;
+            background-color: #151c2c;
+            border: 1px solid #243048;
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+
+        .tabela-container h3 {
+            font-size: 1.8rem;
+            color: #00d2ff;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .tabela-container p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #243048;
+            font-size: 1.1rem;
+        }
+
+        th {
+            background-color: #0b0f19;
+            color: #00d2ff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:hover td {
+            background-color: #1e293b;
+        }
+
+        /* JANELA FLUTUANTE DO CARRINHO (MODAL) */
+        .modal-carrinho {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .conteudo-carrinho {
+            background-color: #151c2c;
+            border: 2px solid #00d2ff;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.3);
+        }
+
+        .conteudo-carrinho h3 {
+            color: #00d2ff;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .lista-itens {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .item-carrinho {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #243048;
+            padding: 0.8rem 0;
+            color: #ffffff;
+        }
+
+        .total-container {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00d2ff;
+            margin-bottom: 1.5rem;
+        }
+
+        .botoes-carrinho {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-fechar {
+            background-color: #243048;
+            color: #ffffff;
+        }
+
+        .btn-fechar:hover {
+            background-color: #334155;
+        }
+
+        footer {
+            background-color: #151c2c;
+            border-top: 1px solid #243048;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Moda Masculina</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="colecao.html" class="active">Coleção</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li>
+                    <button class="btn-carrinho-header" onclick="abrirCarrinho()">
+                        🛒 Carrinho <span class="contador-carrinho" id="contador">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="subtitulo-secao">
+            <h2>Catálogo Completo</h2>
+            <p>Selecione seu produto e confira os preços promocionais.</p>
+        </div>
+
+        <div class="grid-produtos">
+            <article class="card-produto">
+                <h3>Tênis Casual</h3>
+                <img src="https://i.pinimg.com/1200x/02/63/4b/02634bdaf88f6fbaf5f3d4c0a0c9fe47.jpg" alt="Tênis Casual">
+                <p class="preco">R$ 299,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Tênis Casual', 299.90)">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card-produto">
+                <h3>Calça Jeans Wide Leg</h3>
+                <img src="https://i.pinimg.com/1200x/57/01/3f/57013f5d088bd8e8bbfa799701497a9d.jpg" alt="Calça Jeans Wide Leg">
+                <p class="preco">R$ 189,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Calça Jeans Wide Leg', 189.90)">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card-produto">
+                <h3>Camisa Social</h3>
+                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=800&auto=format&fit=crop" alt="Camisa Social">
+                <p class="preco">R$ 149,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Camisa Social', 149.90)">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card-produto">
+                <h3>Relógio Rolex</h3>
+                <img src="https://i.pinimg.com/736x/97/ca/fe/97cafe793181df23bc758fbfe4b2e1b0.jpg" alt="Relógio Analógico">
+                <p class="preco">R$ 399,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Relógio Analógico', 399.90)">Adicionar ao Carrinho</button>
+            </article>
+        </div>
+
+        <section class="tabela-container">
+            <h3>Guia de Medidas (cm)</h3>
+            <p>Compare com suas medidas para escolher o tamanho ideal:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tamanho</th>
+                        <th>Calça (Cintura)</th>
+                        <th>Camisa (Tórax)</th>
+                        <th>Calçado (BR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>P</td>
+                        <td>78 - 82 cm</td>
+                        <td>92 - 96 cm</td>
+                        <td>38 - 39</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>86 - 90 cm</td>
+                        <td>100 - 104 cm</td>
+                        <td>40 - 41</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>94 - 98 cm</td>
+                        <td>108 - 112 cm</td>
+                        <td>42 - 43</td>
+                    </tr>
+                    <tr>
+                        <td>GG</td>
+                        <td>102 - 106 cm</td>
+                        <td>116 - 120 cm</td>
+                        <td>44 - 45</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- MODAL DO CARRINHO -->
+    <div class="modal-carrinho" id="modalCarrinho">
+        <div class="conteudo-carrinho">
+            <h3>Seu Carrinho</h3>
+            <ul class="lista-itens" id="listaItens"></ul>
+            <div class="total-container">
+                <span>Total:</span>
+                <span id="valorTotal">R$ 0,00</span>
+            </div>
+            <div class="botoes-carrinho">
+                <button class="btn btn-fechar" onclick="fecharCarrinho()">Fechar</button>
+                <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Moda Masculina - Rhamom. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DO CARRINHO -->
+    <script>
+        let carrinho = [];
+        let total = 0;
+
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            total += preco;
+            atualizarCarrinho();
+            alert(nome + " adicionado ao seu carrinho!");
+        }
+
+        function atualizarCarrinho() {
+            document.getElementById('contador').innerText = carrinho.length;
+            const lista = document.getElementById('listaItens');
+            lista.innerHTML = '';
+
+            carrinho.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'item-carrinho';
+                li.innerHTML = `<span>${item.nome}</span> <span>R$ ${item.preco.toFixed(2)}</span>`;
+                lista.appendChild(li);
+            });
+
+            document.getElementById('valorTotal').innerText = `R$ ${total.toFixed(2)}`;
+        }
+
+        function abrirCarrinho() {
+            document.getElementById('modalCarrinho').style.display = 'flex';
+        }
+
+        function fecharCarrinho() {
+            document.getElementById('modalCarrinho').style.display = 'none';
+        }
+
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio!");
+            } else {
+                alert("Obrigado pela compra! Seu pedido no valor total de R$ " + total.toFixed(2) + " foi realizado com sucesso.");
+                carrinho = [];
+                total = 0;
+                atualizarCarrinho();
+                fecharCarrinho();
+            }
+        }
+    </script>
+
+</body>
+</html>
