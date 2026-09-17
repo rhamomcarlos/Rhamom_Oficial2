@@ -1,0 +1,356 @@
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #070b14;
+    --fundo-secundario: #0d1422;
+    --card: #111a2b;
+    --texto: #f5f7fa;
+    --texto-secundario: #9ba8bb;
+    --azul: #4da3ff;
+    --azul-claro: #7cc4ff;
+    --borda: #1d2a3e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* ===== CABEÇALHO ===== */
+
+header {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--borda);
+    background: rgba(7, 11, 20, 0.95);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo span {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--azul);
+    color: var(--azul-claro);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--azul-claro);
+}
+
+/* ===== ÁREA PRINCIPAL ===== */
+
+main {
+    overflow: hidden;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 650px;
+    padding: 90px 7%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 70px;
+    background:
+        radial-gradient(circle at 80% 40%, rgba(77, 163, 255, 0.15), transparent 35%);
+}
+
+.hero-text {
+    max-width: 720px;
+}
+
+.destaque {
+    margin-bottom: 18px;
+    color: var(--azul-claro);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    max-width: 700px;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1.05;
+    margin-bottom: 28px;
+    letter-spacing: -3px;
+}
+
+.hero h2 strong,
+.sobre h2 strong,
+.chamada h2 strong {
+    color: var(--azul-claro);
+}
+
+.hero-text > p:not(.destaque) {
+    max-width: 560px;
+    color: var(--texto-secundario);
+    font-size: 18px;
+    margin-bottom: 38px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 15px 25px;
+    background: var(--azul);
+    color: #06101d;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: var(--azul-claro);
+    transform: translateY(-3px);
+}
+
+/* ===== CARD PRINCIPAL ===== */
+
+.hero-card {
+    min-height: 390px;
+    border: 1px solid var(--borda);
+    background:
+        linear-gradient(145deg, #111c2f, #080d17);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(124, 196, 255, 0.3);
+    transform: rotate(45deg);
+}
+
+.hero-card span {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    letter-spacing: 6px;
+    z-index: 1;
+}
+
+.hero-card strong {
+    color: var(--azul-claro);
+    font-size: 45px;
+    letter-spacing: 8px;
+    z-index: 1;
+}
+
+.hero-card p {
+    color: var(--texto-secundario);
+    margin-top: 20px;
+    z-index: 1;
+}
+
+/* ===== SOBRE ===== */
+
+.sobre {
+    padding: 110px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+    background: var(--fundo-secundario);
+}
+
+.sobre h2 {
+    font-size: 44px;
+    line-height: 1.1;
+}
+
+.sobre > p {
+    color: var(--texto-secundario);
+    font-size: 18px;
+    align-self: end;
+}
+
+/* ===== CATEGORIAS ===== */
+
+.categorias {
+    padding: 110px 7%;
+}
+
+.titulo-secao {
+    margin-bottom: 50px;
+}
+
+.titulo-secao h2 {
+    font-size: 44px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    min-height: 310px;
+    padding: 35px;
+    background: var(--card);
+    border: 1px solid var(--borda);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--azul);
+}
+
+.icone {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--azul);
+    color: var(--azul-claro);
+    margin-bottom: 45px;
+    font-weight: bold;
+}
+
+.card h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--texto-secundario);
+    margin-bottom: 25px;
+}
+
+.card a {
+    color: var(--azul-claro);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== CHAMADA ===== */
+
+.chamada {
+    margin: 0 7% 110px;
+    padding: 90px 60px;
+    text-align: center;
+    border: 1px solid var(--borda);
+    background:
+        radial-gradient(circle at center, rgba(77, 163, 255, 0.13), transparent 55%),
+        var(--fundo-secundario);
+}
+
+.chamada h2 {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+/* ===== RODAPÉ ===== */
+
+footer {
+    padding: 45px 7%;
+    border-top: 1px solid var(--borda);
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    background: #050810;
+}
+
+footer h2 {
+    margin-bottom: 5px;
+}
+
+footer p {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .chamada {
+        padding: 60px 25px;
+    }
+
+    .chamada h2 {
+        font-size: 36px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
