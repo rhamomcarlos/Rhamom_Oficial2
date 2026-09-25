@@ -1,0 +1,62 @@
+header {
+    background-color: palevioletred;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+header nav {
+    background-color: aliceblue;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+header nav ul li a {
+    color: black;
+}
+
+main {
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+main h2 {
+    text-align: center;
+}
+
+main table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+main table th,
+main table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+main table th {
+    background-color: palevioletred;
+    color: white;
+}
+
+main table img {
+    width: 60px;
+    height: 40px;
+}
+
+footer {
+    background-color: rgb(78, 78, 78);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
