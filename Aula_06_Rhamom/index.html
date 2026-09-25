@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhamom | Aula 06 - Introdução ao JavaScript</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23ffcb66'/%3E%3Ctext x='7' y='29' font-size='24'%3EJS%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="estilo.css">
+    <!-- defer faz o JavaScript executar depois que o HTML foi carregado. -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <p class="disciplina">SENAI · Linguagem de Marcação</p>
+        <h1>Aula 06 — Introdução ao JavaScript</h1>
+        <p>Aluno: Rhamom</p>
+        <nav aria-label="Conteúdo da aula">
+            <a href="#home">Home</a>
+            <a href="#introducao">Introdução</a>
+        </nav>
+    <p class="tema-pessoal">Painel de desafios</p><a class="voltar-menu" href="../ABRIR_ATIVIDADES.html">Todas as atividades de Rhamom</a></header>
+
+    <main>
+        <section id="home">
+            <h2>01. Home — Meu primeiro JavaScript</h2>
+            <p>HTML organiza o conteúdo, CSS define a aparência e JavaScript adiciona comportamentos à página. Clique nos botões para experimentar.</p>
+            <h3>Mostrar data e hora</h3>
+            <p>O botão consulta o relógio do computador no momento do clique.</p>
+            <button type="button" onclick="mostrarData()">Registrar horário</button>
+            <p id="data" class="resultado" aria-live="polite">Registre o horário deste estudo de Rhamom.</p>
+        </section>
+
+        <section id="introducao">
+            <h2>02. Introdução — Modificando a página</h2>
+            <p><code>document.getElementById()</code> encontra um elemento pelo seu <code>id</code>. Depois, podemos alterar suas propriedades.</p>
+
+            <article>
+                <h3>Alterar o conteúdo HTML</h3>
+                <p id="mensagem" class="resultado" aria-live="polite">O próximo desafio começa com este botão.</p>
+                <button type="button" onclick="alterarTexto()">Atualizar anotação</button>
+                <p class="explicacao">A propriedade <code>innerHTML</code> substitui o conteúdo do elemento.</p>
+            </article>
+
+            <article>
+                <h3>Alterar um atributo de imagem</h3>
+                <p>Acenda ou apague o indicador trocando o atributo <code>src</code> da imagem.</p>
+                <img id="luz" src="luz-apagada.svg" alt="Indicador apagado" width="120" height="120">
+                <div class="botoes">
+                    <button type="button" onclick="acenderLuz()">Acender</button>
+                    <button type="button" onclick="apagarLuz()">Apagar</button>
+                </div>
+                <p id="estado-luz" aria-live="polite">O indicador está apagado.</p>
+            </article>
+
+            <article>
+                <h3>Alterar o estilo CSS</h3>
+                <p id="texto-estilo" class="resultado">Destaque para a etapa atual do desafio.</p>
+                <div class="botoes">
+                    <button type="button" onclick="destacarTexto()">Destacar texto</button>
+                    <button type="button" onclick="restaurarEstilo()">Restaurar estilo</button>
+                </div>
+                <p class="explicacao"><code>style.fontSize</code> muda o tamanho da fonte e <code>style.color</code> muda sua cor.</p>
+            </article>
+
+            <article>
+                <h3>Esconder e mostrar elementos</h3>
+                <div class="botoes">
+                    <button type="button" onclick="esconderTexto()" aria-controls="texto-visivel">Esconder</button>
+                    <button type="button" onclick="mostrarTexto()" aria-controls="texto-visivel">Mostrar</button>
+                </div>
+                <div aria-live="polite">
+                    <p id="texto-visivel" class="resultado">Esta anotação do painel de desafios pode ser escondida e mostrada.</p>
+                </div>
+                <p class="explicacao"><code>style.display = "none"</code> esconde; <code>"block"</code> mostra novamente.</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Sintaxe básica utilizada</h2>
+            <p><code>function</code> declara uma função. As chaves delimitam seus comandos. <code>const</code> guarda uma referência que não será reatribuída; <code>=</code> atribui um valor. O evento <code>onclick</code> chama a função quando o botão é clicado.</p>
+            <pre><code>function alterarTexto() {
+    const mensagem = document.getElementById("mensagem");
+    mensagem.innerHTML = "Desafio concluído: a página respondeu ao clique!";
+}</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Referências da atividade:
+            <a href="https://www.w3schools.com/js/default.asp">W3Schools — JS Home</a> e
+            <a href="https://www.w3schools.com/js/js_intro.asp">JS Introduction</a>.
+        </p>
+    </footer>
+</body>
+</html>

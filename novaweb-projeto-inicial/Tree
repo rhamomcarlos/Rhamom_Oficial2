@@ -1,0 +1,27 @@
+Novaweb-Projeto-Inicial/
+│
+├── assets/
+│   └── css/
+│       ├── icons/
+│       │
+│       └── images/
+│           ├── Cronograma
+│           ├── Github aula 06.png
+│           └── imagem
+│
+├── Code_Review.md
+├── Guia_de_Estilo_Inicial.md
+├── style.css
+│
+├── pages/
+│   ├── contato.html
+│   ├── produtos.html
+│   └── sobre.html
+│
+├── TechStore/
+│   └── index.html
+│
+├── wireframes/
+│   └── home.html
+│
+└── README.md

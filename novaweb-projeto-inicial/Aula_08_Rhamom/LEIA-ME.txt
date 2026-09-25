@@ -1,0 +1,16 @@
+Aula 08 - Rhamom
+Tema visual: Painel de desafios
+
+COMO ABRIR
+Abra index.html com dois cliques no Explorador de Arquivos.
+Para estudar o código, abra esta pasta no VS Code.
+Mantenha todos os arquivos da aula juntos. Não é necessário instalar pacotes.
+
+CONTEÚDO
+06: Home e Introdução ao JavaScript, conforme W3Schools.
+08: duas colunas com float, clear, div fixa e exemplos de position e display.
+09: CSS inline, interno e externo; card 300x150 com padding 20px, borda 1px,
+margem 10px, desafio de centralização e página Sobre Mim.
+
+Leia os comentários, teste os exemplos e personalize os textos antes de entregar.
+Os temas são exemplos de estudo; não descrevem interesses pessoais reais.

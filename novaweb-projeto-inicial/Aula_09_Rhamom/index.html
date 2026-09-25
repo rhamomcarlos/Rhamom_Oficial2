@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhamom | Aula 09 - Tipos de CSS e Box Model</title>
+    <!-- CSS externo: regras compartilhadas em um arquivo separado. -->
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23173252'/%3E%3Crect x='7' y='7' width='18' height='18' fill='none' stroke='%23ffffff' stroke-width='3'/%3E%3C/svg%3E">
+    <!-- CSS interno: regras válidas neste documento. -->
+    <style>
+        .exemplo-interno {
+            color: #63300d;
+            background-color: #fff0d2;
+            border-left: 4px solid #9c510c;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>SENAI · Linguagem de Marcação · Rhamom</p>
+        <h1>Aula 09 — Tipos de CSS e Box Model</h1>
+        <p>Três formas de aplicar estilos e quatro partes de uma caixa.</p>
+        <nav><a href="#estilos">Tipos de CSS</a> · <a href="#box-model">Box model</a> · <a href="sobre-mim.html">Sobre Mim</a></nav>
+    <p class="tema-pessoal">Painel de desafios</p><a class="voltar-menu" href="../ABRIR_ATIVIDADES.html">Todas as atividades de Rhamom</a></header>
+    <main>
+        <section id="estilos" class="painel">
+            <h2>1. Inline, interno e externo</h2>
+            <h3>CSS inline</h3>
+            <!-- Exemplo inline intencional: estilo diretamente no elemento. -->
+            <p style="color: #174b32; background-color: #e0f4e8; border-left: 4px solid #247749; padding: 16px;">Este parágrafo recebe CSS pelo atributo style.</p>
+            <pre><code>&lt;p style="color: #174b32;"&gt;Texto&lt;/p&gt;</code></pre>
+            <h3>CSS interno</h3>
+            <p class="exemplo-interno">Este parágrafo recebe CSS da tag style no head deste HTML.</p>
+            <pre><code>&lt;style&gt;
+    .exemplo-interno { color: #63300d; }
+&lt;/style&gt;</code></pre>
+            <h3>CSS externo</h3>
+            <p class="exemplo-externo">Este parágrafo recebe CSS do arquivo estilo.css.</p>
+            <pre><code>&lt;link rel="stylesheet" href="estilo.css"&gt;</code></pre>
+            <p>O CSS externo pode ser reutilizado em várias páginas. O interno pertence ao documento. O inline pertence ao elemento. A prioridade também depende da cascata e da especificidade; o CSS interno não ganha automaticamente do externo.</p>
+        </section>
+
+        <section id="box-model" class="painel">
+            <h2>2. As quatro partes do box model</h2>
+            <div class="diagrama-margem">
+                <span>Margin — espaço externo</span>
+                <div class="diagrama-borda">
+                    <span>Border — contorno</span>
+                    <div class="diagrama-padding">
+                        <span>Padding — espaço interno</span>
+                        <div class="diagrama-conteudo">Content — conteúdo</div>
+                    </div>
+                </div>
+            </div>
+            <p>Este desenho representa as camadas. No elemento real, a margem é transparente; o fundo se estende pela área de padding.</p>
+            <p><code>padding: 10px 20px</code> usa 10px em cima e embaixo, e 20px nas laterais. Em <code>margin: 5px 10px 15px 20px</code>, a ordem é topo, direita, base e esquerda.</p>
+        </section>
+
+        <section class="exercicio">
+            <div class="texto-exercicio">
+                <h2>3. Card solicitado no PDF</h2>
+                <p>Conteúdo de 300 × 150px, padding de 20px, borda de 1px e margem de 10px.</p>
+            </div>
+            <div class="area-card" tabindex="0" role="region" aria-label="Card de tamanho fixo; role horizontalmente em telas estreitas">
+                <div class="card">
+                    <h1>Etapa do desafio</h1>
+                    <p>Cada etapa ocupa uma caixa. O espaço interno protege a leitura, a borda marca o limite e a margem separa as etapas.</p>
+                </div>
+            </div>
+            <div class="texto-exercicio">
+                <p>Com <code>box-sizing: content-box</code>, a largura até a borda é <strong>300 + 40 + 2 = 342px</strong>. Com as duas margens de 10px, o espaço horizontal total é <strong>362px</strong>. A altura até a borda é <strong>150 + 40 + 2 = 192px</strong>.</p>
+                <pre><code>.card {
+    box-sizing: content-box;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+}</code></pre>
+                <p>Com <code>border-box</code>, width e height incluiriam o conteúdo, o padding e a borda. A margem continuaria externa.</p>
+            </div>
+        </section>
+
+        <section class="exercicio">
+            <div class="texto-exercicio">
+                <h2>4. Desafio: centralizar o card</h2>
+                <p>As margens laterais automáticas dividem o espaço horizontal disponível.</p>
+            </div>
+            <div class="area-card" tabindex="0" role="region" aria-label="Card centralizado de tamanho fixo">
+                <div class="card card-centralizado">
+                    <h1>Etapa em foco</h1>
+                    <p>A etapa aparece centralizada graças às margens laterais automáticas, mantendo as medidas do exercício.</p>
+                </div>
+            </div>
+            <div class="texto-exercicio">
+                <pre><code>.card-centralizado { margin: 10px auto; }</code></pre>
+                <p>Em telas muito estreitas, as áreas dos cards permitem rolagem horizontal para preservar as medidas do exercício.</p>
+            </div>
+        </section>
+        <section class="painel">
+            <h2>5. Aplicação na página pessoal</h2>
+            <p>A página Sobre Mim de Rhamom aplica padding, margens e uma largura máxima centralizada, usando o mesmo CSS externo.</p>
+            <a class="link-botao" href="sobre-mim.html">Abrir Sobre Mim</a>
+        </section>
+    </main>
+    <footer><p>Rhamom · Aula 09</p><p>Referência: material do professor “Aula 13: Box Model”.</p></footer>
+</body>
+</html>

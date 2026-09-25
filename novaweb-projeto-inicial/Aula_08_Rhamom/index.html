@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhamom | Aula 08 - Diagramação com DIV e Posicionamento</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23173252'/%3E%3Cpath d='M6 6h12v20H6zM21 6h5v20h-5z' fill='%23ffffff'/%3E%3C/svg%3E">
+</head>
+<body id="topo">
+    <header class="cabecalho">
+        <p>SENAI · Linguagem de Marcação · Rhamom</p>
+        <h1>Aula 08 — Diagramação com DIV</h1>
+        <p>Organização de caixas, alinhamento e posicionamento em CSS.</p>
+    <p class="tema-pessoal">Painel de desafios</p><a class="voltar-menu" href="../ABRIR_ATIVIDADES.html">Todas as atividades de Rhamom</a></header>
+
+    <!-- Estrutura solicitada: container, duas colunas e uma div para limpar o float. -->
+    <div class="container">
+        <div class="coluna-principal">
+            <h2>Painel de desafios</h2>
+            <p>A tag <code>&lt;div&gt;</code> é uma caixa genérica usada para agrupar elementos. Esta coluna usa <code>float: left</code> e ocupa 65% da largura interna do container.</p>
+
+            <h3>1. Formatação e alinhamento</h3>
+            <div class="caixa-formatada">Painel de desafios: cada etapa em seu espaço.</div>
+            <p><code>padding</code> cria espaço interno; <code>margin</code> cria espaço externo. <code>text-align: center</code> centraliza o texto e <code>margin: auto</code> centraliza uma caixa com largura limitada.</p>
+
+            <h3>2. Position: static</h3>
+            <div class="demonstracao">
+                <div class="caixa estatica">Base do painel · static</div>
+            </div>
+            <p>É o comportamento padrão. Mesmo com <code>top: 20px</code>, esta caixa não se desloca.</p>
+
+            <h3>3. Position: relative</h3>
+            <div class="demonstracao">
+                <div class="origem"><div class="caixa relativa">Anotação · relative</div></div>
+            </div>
+            <p>A borda tracejada marca o espaço original. A caixa se desloca 16px para a direita e 12px para baixo, mas continua reservando esse espaço.</p>
+
+            <h3>4. Position: absolute e z-index</h3>
+            <div class="palco">
+                <p class="legenda-palco">Pai com position: relative</p>
+                <div class="camada camada-fundo">Camada base · z-index: 1</div>
+                <div class="camada camada-frente">Destaque · z-index: 2</div>
+            </div>
+            <p>As duas caixas usam <code>position: absolute</code> e se posicionam em relação ao pai. Elas não reservam espaço no fluxo. Neste mesmo contexto de empilhamento, a camada com <code>z-index: 2</code> aparece sobre a camada com valor 1.</p>
+
+            <h3>5. Display</h3>
+            <p><strong>block:</strong> cada div começa em uma nova linha.</p>
+            <div class="exemplo-display">
+                <div class="bloco">Título</div>
+                <div class="bloco">Descrição</div>
+            </div>
+            <p><strong>inline:</strong> as divs acompanham a linha do texto.</p>
+            <div class="exemplo-display">
+                Texto antes <div class="em-linha">inline A</div> <div class="em-linha">inline B</div> texto depois.
+            </div>
+            <p><strong>inline-block:</strong> ficam lado a lado quando há espaço e aceitam largura e altura.</p>
+            <div class="exemplo-display">
+                <div class="bloco-em-linha">Nota 1</div>
+                <div class="bloco-em-linha">Nota 2</div>
+            </div>
+            <p><strong>none:</strong> a div abaixo existe no HTML, mas não aparece nem ocupa espaço.</p>
+            <div class="oculta">Esta div está escondida por display: none.</div>
+        </div>
+
+        <div class="coluna-secundaria">
+            <h2>Guia de Rhamom</h2>
+            <p>Esta div usa <code>float: left</code>, largura de 30% e margem esquerda de 5%.</p>
+            <h3>Duas colunas</h3>
+            <p>65% + 5% + 30% = 100%.</p>
+            <p><code>box-sizing: border-box</code> inclui bordas e padding na largura definida.</p>
+            <h3>Limpeza da flutuação</h3>
+            <p>No fim do container, a div <code>limpa-flutuacao</code> usa <code>clear: both</code>. Assim, o container envolve a altura das colunas e o rodapé aparece abaixo delas.</p>
+            <h3>Position: fixed</h3>
+            <p>Role a página: o botão “Voltar ao topo” fica no canto inferior direito da janela. Clique nele para retornar ao início.</p>
+            <h3>Em telas pequenas</h3>
+            <p>As colunas ficam uma abaixo da outra para facilitar a leitura.</p>
+        </div>
+
+        <!-- Deve ficar depois das duas colunas, ainda dentro do container. -->
+        <div class="limpa-flutuacao"></div>
+    </div>
+
+    <footer class="rodape">
+        <p>Rhamom · Aula 08 · Linguagem de Marcação</p>
+        <p>Prática baseada no material “Aula 14: Diagramação com DIV e Posicionamento”.</p>
+    </footer>
+
+    <!-- Fora do container, como solicitado no material. -->
+    <div class="botao-fixo"><a href="#topo">Voltar ao topo ↑</a></div>
+</body>
+</html>

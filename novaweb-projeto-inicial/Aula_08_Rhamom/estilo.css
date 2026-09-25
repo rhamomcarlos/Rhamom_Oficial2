@@ -1,0 +1,67 @@
+/* Inclui padding e bordas na largura, evitando que as colunas ultrapassem 100%. */
+* { box-sizing: border-box; }
+body { margin: 0; padding-bottom: 100px; font: 16px/1.6 Arial, sans-serif; background: #eaf2ff; color: #1d2939; }
+.cabecalho { background: #173252; color: white; padding: 28px 5%; border-top: 7px solid #ffcb66; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.25; }
+h2 { font-size: 1.35rem; margin-top: 0; }
+h3 { font-size: 1.1rem; margin-top: 28px; }
+code { font-size: 0.95em; overflow-wrap: anywhere; }
+
+/* Container centralizado e layout de duas colunas com float. */
+.container { width: 90%; max-width: 1100px; margin: 28px auto; border: 1px solid #b9c9d9; padding: 16px; background: white; }
+.coluna-principal { float: left; width: 65%; padding: 20px; background: #f0f8ff; }
+.coluna-secundaria { float: left; width: 30%; margin-left: 5%; padding: 20px; background: #e6f7ff; border-top: 4px solid #285cac; }
+.limpa-flutuacao { clear: both; }
+
+/* Formatação da div: dimensão, alinhamento, cores e espaçamentos. */
+.caixa-formatada { width: 90%; margin: 20px auto; padding: 20px; border: 2px solid #285cac; background: white; text-align: center; border-radius: 6px; }
+.demonstracao { padding: 20px; background: white; border: 1px solid #b9c9d9; }
+.caixa { padding: 12px; color: white; background: #285cac; }
+
+/* top não tem efeito em um elemento com position: static. */
+.estatica { position: static; top: 20px; }
+
+/* relative desloca a caixa sem remover o espaço que ela ocupava. */
+.origem { width: calc(100% - 16px); border: 2px dashed #60748b; margin-bottom: 12px; }
+.relativa { position: relative; left: 16px; top: 12px; }
+
+/* O pai posicionado é a referência das caixas absolute. */
+.palco { position: relative; height: 290px; background: white; border: 1px solid #b9c9d9; isolation: isolate; }
+.legenda-palco { margin: 12px; font-size: 0.9rem; }
+.camada { position: absolute; width: 75%; height: 135px; padding: 12px; color: white; }
+.camada-fundo { left: 12px; top: 70px; z-index: 1; background: #285cac; }
+.camada-frente { right: 12px; top: 135px; z-index: 2; background: #80331b; }
+
+/* Comparação entre os comportamentos de display. */
+.exemplo-display { padding: 12px; border: 1px solid #b9c9d9; background: white; }
+.bloco { display: block; padding: 8px; margin: 6px 0; background: #d9eafd; }
+.em-linha { display: inline; background: #ffdf9c; }
+.bloco-em-linha { display: inline-block; width: 110px; height: 65px; padding: 12px; margin: 4px; background: #d9eafd; vertical-align: top; }
+.oculta { display: none; }
+
+/* fixed mantém o botão no canto da janela, mesmo durante a rolagem. */
+.botao-fixo { position: fixed; right: 20px; bottom: 20px; z-index: 100; background: #285cac; border-radius: 6px; box-shadow: 0 3px 8px #0003; }
+.botao-fixo a { display: block; padding: 12px 18px; color: white; text-decoration: none; }
+.botao-fixo a:hover { background: #113d74; border-radius: 6px; }
+a:focus-visible { outline: 3px solid #b35a00; outline-offset: 4px; }
+.rodape { width: 90%; max-width: 1100px; margin: auto; border-top: 1px solid #b9c9d9; padding: 16px 0; }
+
+/* Adaptação para celular, mantendo o exemplo com float em telas maiores. */
+@media (max-width: 700px) {
+    .container { padding: 10px; }
+    .coluna-principal, .coluna-secundaria { float: none; width: 100%; margin: 0; padding: 16px; }
+    .coluna-secundaria { margin-top: 20px; }
+}
+
+/* Identidade visual da atividade de Rhamom. As medidas dos exercícios foram preservadas. */
+body { font-family: Trebuchet MS, sans-serif; background-color: #eaf2ff; }
+header, .cabecalho { text-align: center; background-color: #173252; }
+header .voltar-menu { display: inline-block; margin: 10px 0; color: white; }
+.tema-pessoal { color: #ffcb66; font-weight: bold; font-size: 1.2rem; }
+main, .container { max-width: 1000px; }
+.pagina-pessoal main { max-width: 850px; }
+section, .painel, .exercicio { border-radius: 8px; }
+.coluna-principal { background-color: #eaf2ff; }
+.coluna-secundaria { background-color: white; border: 2px solid #285cac; }
+button, .link-botao { background-color: #285cac; }
+h2 { border-top: 4px solid #ffcb66; padding-top: 12px; }

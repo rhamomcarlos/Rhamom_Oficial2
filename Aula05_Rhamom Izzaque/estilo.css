@@ -1,0 +1,30 @@
+mkdir "%userprofile%\Desktop\meu-site"
+(
+echo ^<!DOCTYPE html^>
+echo ^<html lang="pt-br"^>
+echo ^<head^>
+echo     ^<meta charset="UTF-8"^>
+echo     ^<title^>Página Inicial - Meus Estudos de HTML^</title^>
+echo ^</head^>
+echo ^<body^>
+echo     ^<header id="topo"^>
+echo         ^<h1^>Meu Portal de Estudos^</h1^>
+echo         ^<nav^>
+echo             ^<ul^>
+echo                 ^<li^>^<a href="index.html"^>Home^</a^>^</li^>
+echo                 ^<li^>^<a href="aula05.html"^>Aula 05^</a^>^</li^>
+echo                 ^<li^>^<a href="contato.html"^>Contato^</a^>^</li^>
+echo             ^</ul^>
+echo         ^</nav^>
+echo     ^</header^>
+echo     ^<main^>
+echo         ^<h2^>Bem-vindo ao Meu Aprendizado Web^</h2^>
+echo         ^<p^>Esta é a página principal onde organizo todo o conteúdo do meu curso de HTML.^</p^>
+echo         ^<p^>Acesse o nosso ^<a href="aula05.html"^>Índice da Aula 05^</a^> para ver o cronograma completo de aulas, links e listas.^</p^>
+echo     ^</main^>
+echo     ^<footer^>
+echo         ^<a href="#topo"^>Voltar ao Topo^</a^>
+echo     ^</footer^>
+echo ^</body^>
+echo ^</html^>
+) > "%userprofile%\Desktop\meu-site\index.html"

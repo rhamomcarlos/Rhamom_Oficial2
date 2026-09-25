@@ -1,0 +1,47 @@
+/* Estilos da página; os exemplos interativos ficam no script.js. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background: #eaf2ff;
+    color: #1d2939;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+header { background: #173252; color: white; padding: 32px max(20px, calc((100% - 880px) / 2)); border-top: 8px solid #ffcb66; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.25; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+.disciplina { color: #ffcb66; }
+nav { display: flex; gap: 24px; }
+nav a { color: white; }
+main, footer { max-width: 920px; margin: auto; padding: 20px; }
+section { padding: 24px; margin-bottom: 24px; background: white; border: 1px solid #d7dee7; border-radius: 8px; scroll-margin-top: 16px; }
+article { padding: 16px 0; border-top: 1px solid #d7dee7; }
+button { background: #285cac; color: white; border: 0; border-radius: 5px; padding: 12px 18px; font: inherit; cursor: pointer; }
+button:hover { background: #113d74; }
+button:focus-visible, a:focus-visible { outline: 3px solid #b35a00; outline-offset: 4px; }
+.botoes { display: flex; flex-wrap: wrap; gap: 10px; }
+.resultado { background: #eef4fc; padding: 16px; border-left: 4px solid #285cac; overflow-wrap: anywhere; }
+#texto-estilo { transition: color 0.3s, font-size 0.3s; }
+#luz { display: block; margin: 16px 0; }
+.explicacao { color: #48566a; }
+code { font-size: 0.95em; overflow-wrap: anywhere; }
+pre { padding: 16px; background: #173252; color: white; white-space: pre-wrap; overflow-wrap: anywhere; border-radius: 5px; }
+footer a { color: #174e90; }
+@media (max-width: 480px) { section { padding: 16px; } main, footer { padding: 14px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } #texto-estilo { transition: none; } }
+
+/* Identidade visual da atividade de Rhamom. As medidas dos exercícios foram preservadas. */
+body { font-family: Trebuchet MS, sans-serif; background-color: #eaf2ff; }
+header, .cabecalho { text-align: center; background-color: #173252; }
+header .voltar-menu { display: inline-block; margin: 10px 0; color: white; }
+.tema-pessoal { color: #ffcb66; font-weight: bold; font-size: 1.2rem; }
+main, .container { max-width: 1000px; }
+.pagina-pessoal main { max-width: 850px; }
+section, .painel, .exercicio { border-radius: 8px; }
+.coluna-principal { background-color: #eaf2ff; }
+.coluna-secundaria { background-color: white; border: 2px solid #285cac; }
+button, .link-botao { background-color: #285cac; }
+h2 { border-top: 4px solid #ffcb66; padding-top: 12px; }
