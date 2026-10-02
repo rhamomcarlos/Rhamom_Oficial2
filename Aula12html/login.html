@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login - Aula 12</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <main class="login-container">
+        <h2>Acesso ao Sistema</h2>
+        
+        <form id="formLogin" action="#" method="POST" novalidate>
+            
+            <!-- Campo de E-mail -->
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <!-- Campo de Senha -->
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                <span class="error-message" id="senhaError"></span>
+            </div>
+
+            <!-- Campo Oculto (Hidden Input) -->
+            <input type="hidden" id="origemRequisicao" name="origemRequisicao" value="tela_login_aula12">
+
+            <!-- Links Úteis -->
+            <div class="form-links">
+                <a href="#">Criar uma conta</a>
+                <a href="#">Esqueceu a senha?</a>
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit" id="btnSubmit">Entrar</button>
+        </form>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>
