@@ -1,0 +1,41 @@
+/* Estilos aplicados aos seletores de TAG do Exercício 01 e 02 */
+body {
+    margin: 10px;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+h2 {
+    text-align: center;
+    color: green;
+}
+
+p {
+    text-align: justify;
+}
+
+marquee {
+    color: orange;
+    background-color: black;
+    font-weight: bold;
+    display: block;
+}
+
+ul li {
+    color: orange;
+}
+
+ul li a {
+    color: red;
+    text-decoration: underline;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}

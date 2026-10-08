@@ -1,0 +1,72 @@
+/* Respeitando a ordem do exercício 03 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+h2 {
+    text-align: center;
+    color: green;
+}
+
+p {
+    text-align: justify;
+}
+
+marquee {
+    color: orange;
+    background-color: black;
+    font-weight: bold;
+    display: block;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+/* Regras de Semântica do Exercício 04 */
+header {
+    margin: 0px;
+    padding: 5px;
+    background-color: #f5ece2; /* Cor pastel */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 1px solid #333;
+    padding: 5px;
+    background-color: #2f3542; /* Cinza escuro */
+    color: #ffffff;
+}
+
+footer {
+    margin: 0px;
+    padding: 5px;
+    background-color: #1e222a; /* Cor de fundo escura */
+    border-top: 1px solid #57606f; /* Borda em tom mais claro */
+    color: #ffffff;
+    text-align: center;
+}
