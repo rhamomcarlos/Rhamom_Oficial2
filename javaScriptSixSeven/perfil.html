@@ -27,9 +27,20 @@
         </div>
         <div class="form-group">
                <label for="Nome" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="nome" name="nome" value="Menino Ney">
+            <input type="text" class="form-control" id="nome" name="nome" value="Seu Nome">
         
             </div>
+
+             <div>
+                  <label for="SEXO" class="form-label">SEXO:</label>
+            <input type="radio" id="masculino" name="sexo" value="Masculino" required>
+           <label for="masculino">Masculino</label>
+             
+        
+           <input type="radio" id="feminino" name="sexo" value="Feminino">
+          <label for="feminino">Feminino</label>
+             </div>
+
 
                   <div class="form-group">
                <label for="CPF" class="form-label">CPF:</label>
@@ -39,17 +50,68 @@
 
         <div class="form-group">
             <label for="Nascimento" class="form-label">Data de Nascimento:</label>
-            <input type="date" class="form-control" id="nascimento" name="nascimento" value="2009-12-27" max="2026-10-09" required>>
+            <input type="date" class="form-control" id="nascimento" name="nascimento" value="0000-00-00" max="2026-10-09" required>
             </div>
+
+                 
+         <div>
+             <label for="Interesses" class="form-label">Interesses:</label>
+         </div>
+         <div>
+       <input type="checkbox" id="jogos" name="interesses" value="Jogos">
+        <label for="jogos">Jogos</label>
+        </div>
+           
+        <div>
+          <input type="checkbox" id="esporte" name="interesses" value="Esporte">
+          <label for="esporte">Esportes</label>
+        </div>
+
+            <div>
+                <input type="checkbox" id="musica" name="interesses" value="Música">
+               <label for="musica">Música</label>
+            </div>
+                 
+
+               <div>
+               <input type="checkbox" id="Outros" name="Outros" value="Outros">
+             <label for="Outros">Outros</label>
+             </div>
             
-            <div class="form-group">
-            <button type="button" class="btn btn-primary" onclick="mensagem()">Salvar</button>
-               <button type="reset" class="btn btn-secondary" onclick="limparMensagem()">Limpar</button>
-            </div>
+
+             <div class="form-group">
+    <label for="campeonato" class="form-label">Campeonato favorito:</label>
+
+    <select class="form-control" id="campeonato" name="campeonato" required>
+        <option value="">Selecione um campeonato</option>
+        <option value="Brasileirão">Brasileirão</option>
+        <option value="Champions League">Champions League</option>
+        <option value="Copa do Mundo">Copa do Mundo</option>
+        <option value="Paulista">Paulista</option>
+    </select>
+</div>
+
+
+
+
+  <div class="form-group">
+    <label for="sobre" class="form-label">O que você acha do Neymar?</label>
+
+    <textarea class="form-control" id="sobre" name="sobre"
+        rows="4" placeholder="Escreva sua opinião aqui..." required></textarea>
+   </div>
+
+
+
+
+    <div class="form-group">
+    <button type="button" class="btn btn-primary" onclick="mensagem()">Salvar</button>
+    <button type="reset" class="btn btn-secondary" onclick="limparMensagem()">Limpar</button>
+    </div>
 
     </form>
     <main>
-    
+ 
     </main>
 
 </body>
