@@ -1,0 +1,84 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f0e8;
+    margin: 0;
+    padding: 20px;
+    color: #333333;
+}
+
+header {
+    background-color: #5b4636;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    background-color: white;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #5b4636;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #b87945;
+}
+
+input:disabled {
+    background-color: #eeeeee;
+}
+
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color: #cc4444;
+}
+
+#nomeDigitado {
+    color: #8a603e;
+}
+
+#mensagem {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #8a603e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5b4636;
+}

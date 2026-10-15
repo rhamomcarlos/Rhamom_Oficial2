@@ -1,0 +1,70 @@
+<!--
+Descricao: Exercícios da Aula 15 - JavaScript aplicado a Formulários
+nome_arquivo: index.html
+nome_exercicio: Técnicas de manipulação de eventos de envio (onsubmit), captura de dados digitados em tempo real e regras de validação customizadas via programação antes do envio final.
+nome_aluno: Rhamom Izzaque Rocha Carlos
+email_aluno: rhamom.rocha@portalsesisp.org.br
+turma: Código da Turma
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 - Formulário</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main>
+        <div class="titulo">
+            <h2>Novo Cadastro</h2>
+            <p>Preencha os dados para continuar.</p>
+        </div>
+
+        <div id="mensagem"></div>
+
+        <form id="formulario" onsubmit="cadastrar(event)">
+
+            <div class="campos">
+                <div>
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome"
+                    placeholder="Digite seu nome" required>
+                    <p id="nomeDigitado"></p>
+                </div>
+
+                <div>
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade"
+                    placeholder="Sua cidade" required>
+                </div>
+
+                <div>
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone"
+                    placeholder="Digite seu telefone" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email"
+                    placeholder="exemplo@email.com" required>
+                </div>
+            </div>
+
+            <button type="submit">Finalizar cadastro</button>
+
+        </form>
+
+        <footer>
+            <p>Confira os dados antes de finalizar o cadastro.</p>
+        </footer>
+    </main>
+
+</body>
+</html>
