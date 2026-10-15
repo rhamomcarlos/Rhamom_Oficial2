@@ -1,17 +1,8 @@
 
-let campos = document.querySelectorAll("input");
-let botao = document.getElementById("habilitar");
+function habilitar() {
+    document.getElementById("nome").disabled = false;
+}
 
-botao.addEventListener("click", function() {
-    campos.forEach(function(campo) {
-        campo.disabled = false;
-    });
-
-    campos[0].focus();
-});
-
-campos.forEach(function(campo) {
-    campo.addEventListener("blur", function() {
-        campo.disabled = true;
-    });
-});
+document.getElementById("nome").onblur = function() {
+    document.getElementById("nome").disabled = true;
+};
