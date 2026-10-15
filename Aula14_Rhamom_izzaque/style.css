@@ -1,0 +1,88 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+main {
+    background-color: white;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #0066cc;
+}
+
+input:disabled {
+    background-color: #dddddd;
+    cursor: not-allowed;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004c99;
+}
+
+
+/* Quando o campo recebe o foco */
+input:focus {
+    outline: none;
+    border: 2px solid blue;
+    background-color: #ffffff;
+}
+
+/* Quando o campo está desabilitado */
+input:disabled {
+    background-color: #dddddd;
+    cursor: not-allowed;
+}
+
+/* Quando o campo está válido */
+input:valid {
+    border: 2px solid green;
+}
+
+/* Quando o campo está inválido */
+input:invalid {
+    border: 2px solid red;
+}
